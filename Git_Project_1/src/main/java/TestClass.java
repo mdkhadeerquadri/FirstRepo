@@ -6,6 +6,13 @@ public class TestClass {
 	}
 	public void m2() {
 		System.out.println("m2 first change");
+		System.out.println("m2 second change");
+		
+	}
+	private void m3() {
+		System.out.println("m3 first change");
+		System.out.println("m3 second change");
+
 	}
 
 }
