@@ -18,7 +18,7 @@ public class LoginTestClass {
 
 	@BeforeTest
 	public static void OpenLoginPage() {
-		DriverClass.pageload();
+		DriverClass.pageload("https://tutorialsninja.com/demo/index.php?route=common/home");
 		Login_page.acAction();
 		Login_page.logAction();
 	}
