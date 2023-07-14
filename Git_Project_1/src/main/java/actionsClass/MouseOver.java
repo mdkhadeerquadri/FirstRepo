@@ -8,13 +8,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class MouseOver {
+import DriverPackage.CallDriver;
+
+public class MouseOver extends CallDriver {
 	public static void main(String[] args) {
 
-		WebDriver d = new ChromeDriver();
-		d.get("https://www.orangehrm.com/");
-		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		d.manage().window().maximize();
+		pageload("https://www.orangehrm.com/");
 
 		By res = By.xpath("//a[text()='Resources']");
 		WebElement r = d.findElement(res);
@@ -23,7 +22,7 @@ public class MouseOver {
 		WebElement e = d.findElement(ebook);
 		Actions a = new Actions(d);
 		a.moveToElement(r).perform();
-		a.click(e).perform();
+		a.click(e);
 		
 		
 
