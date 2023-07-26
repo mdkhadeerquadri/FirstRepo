@@ -7,11 +7,14 @@ import pages.Homepage;
 public class Home_Test {
 
 	@BeforeMethod
-	public static void login_valid_data() {
+	public static void login_valid_data() { 
 		Login_Test.open_page();
 	}
-	public static void add_user() {
-		Homepage.Action_abtn();
-		
+	@Test
+	public static void add_user() { 
+		Homepage.Action_admin_btn();
+		Homepage.Action_add_btn();
 	}
+
+
 }

@@ -24,7 +24,7 @@ public class LoginPage extends BaseClass {
 	}
 
 	// Actions
-	public static void user_Action(String data) {
+	public static void user_Action(String data) { 
 		WebElement e = user_element();
 		e.click();
 		e.sendKeys(data);
@@ -39,4 +39,6 @@ public class LoginPage extends BaseClass {
 		e.click();
 		
 	}
+	
+	
 }
