@@ -1,4 +1,5 @@
-package QAFox;
+package QAFOX;
+
 
 import java.awt.AWTException;
 

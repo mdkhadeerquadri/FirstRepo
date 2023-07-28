@@ -1,11 +1,12 @@
-package test;
+package QAFOX.test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-import pages.Login_page;
+import QAFOX.pages.Login_page;
 
 public class Test_login_page {
 	
@@ -32,10 +33,11 @@ public class Test_login_page {
 	public static void Login_with_valid_credentials() 
 	{
 		Login_page.Enter_email(suser);
-		assertEquals(suser,Login_page.Locator_email().getAttribute("value"),"email is incorrect");
+		assertEquals(suser,Login_page.Locator_email().inputValue(),"email is incorrect");
 		
 		Login_page.Enter_pass(spass);
-		assertEquals(spass,Login_page.Locator_pass().textContent(),"password is incorrect");
+		assertEquals(spass,Login_page.Locator_pass().inputValue(),"password is incorrect");
+		
 		Login_page.Click_btn();
 		assertEquals(ac_url, Login_page.pg.url());
 	}
