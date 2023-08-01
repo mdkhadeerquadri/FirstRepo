@@ -3,6 +3,7 @@ package orangeHRM.pages;
 import java.util.List;
 
 import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.options.SelectOption;
 
 public class Loginpage extends BaseClass {
 
@@ -21,6 +22,9 @@ public class Loginpage extends BaseClass {
 	static String sidepanal_option = "//ul[@class=\"oxd-main-menu\"]//li";
 	static String delete = "//div[@class=\"oxd-table-card\"][2]//i[@class=\"oxd-icon bi-trash\"]";
 	static String yes_del ="//button[@type=\"button\" and text()=\" Yes, Delete \"]";
+	static String add_btn ="//button[text()=\" Add \"]";
+	static String confirm_popup ="//div[@id=\"oxd-toaster_1\"]";
+	static String UserRole_and_Status ="//div[@class=\"oxd-select-text oxd-select-text--active\"]";
 
 	// Element methods
 
@@ -81,7 +85,18 @@ public class Loginpage extends BaseClass {
 
 		return pg.locator(yes_del);
 	}
+	public static Locator Locator_add_btn() {
 
+		return pg.locator(add_btn);
+	}
+	public static Locator Locator_confirm_popup() {
+
+		return pg.locator(confirm_popup);
+	}
+	public static List<Locator> Locator_UserRole_and_Status() {
+
+		return  pg.locator(UserRole_and_Status).all();
+	}
 	// Action methods
 	static public void Username(String input) {
 		Locator user = Locator_username();
@@ -128,6 +143,19 @@ public class Loginpage extends BaseClass {
 	public static void yes_del_Action() {
 		Locator r = Locator_yes_del();
 		r.click();
+	}
+	public static void add_btn_Action() {
+		Locator r = Locator_add_btn();
+		r.click();
+	}
+	public static void UserRole_and_Status_Action(String s) {
+		List<Locator> op = Locator_UserRole_and_Status();
+		for (Locator l : op)
+		{
+			if(l.selectOption(s) != null) {
+				break;
+			}
+		}
 	}
 
 }
