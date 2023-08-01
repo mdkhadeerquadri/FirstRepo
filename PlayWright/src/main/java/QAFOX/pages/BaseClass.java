@@ -1,4 +1,4 @@
-package pages;
+package QAFOX.pages;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
