@@ -7,8 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverClass {
-	public static WebDriver d = new ChromeDriver();
+	public static WebDriver d;
 	public static void pageload(String url) {
+		d = new ChromeDriver();
 	d.get(url);
     d.manage().window().maximize();
     d.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

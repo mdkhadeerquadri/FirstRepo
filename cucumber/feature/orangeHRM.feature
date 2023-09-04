@@ -1,16 +1,20 @@
-Feature: orangeHRM login page
+Feature: Login page
 
 Background:
 Given url:"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
+Then login page should open
 
-Scenario: Login with valid inputs
-Given username:"Admin"
-Given password:"admin123"
+Scenario Outline: login with valid input
+Given username <username>
+Given password <password>
 And click on login button
-Then home page should display
+Then Dashboard page should open
+Examples:
+|username|password|
+|"Admin"|"admin123"|
 
-Scenario: Login with invalid inputs
-Given username:"Ad"
-Given password:"admi"
+Scenario: login with invalid input
+Given username "admin"
+Given password "123"
 And click on login button
-Then invalid credentials should display
+Then Dashboard page should not open
